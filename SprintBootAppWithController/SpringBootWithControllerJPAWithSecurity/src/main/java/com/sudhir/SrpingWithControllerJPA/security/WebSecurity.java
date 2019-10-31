@@ -1,5 +1,7 @@
 package com.sudhir.SrpingWithControllerJPA.security;
 
+//This class is used to implement atleast one method(POST) to be public, so that user can register themselves
+
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -29,10 +31,10 @@ public class WebSecurity extends WebSecurityConfigurerAdapter{
 	}
 	
 	@Override
-	protected void configure(HttpSecurity http) throws Exception{
+	protected void configure(HttpSecurity http) throws Exception{		// use to configure some of the webservice entrypoint as public
 		http.csrf().disable().authorizeRequests()
-		.antMatchers(HttpMethod.POST, "/users")
+		.antMatchers(HttpMethod.POST, SecurityConstants.SIGN_UP_URL)   	//SIGN_UP_URL url is public
 		.permitAll()
-		.anyRequest().authenticated();
+		.anyRequest().authenticated().and().addFilter(new AuthenticationFilter(authenticationManager()));
 	}
 }

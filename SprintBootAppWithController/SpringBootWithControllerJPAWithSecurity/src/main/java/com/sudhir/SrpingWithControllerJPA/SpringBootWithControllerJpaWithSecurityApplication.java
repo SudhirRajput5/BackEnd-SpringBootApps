@@ -13,7 +13,12 @@ public class SpringBootWithControllerJpaWithSecurityApplication {
 	}
 
 	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {		//it is a password hashing function.
 		return new BCryptPasswordEncoder();
+	}
+	
+	@Bean
+	public SpringApplicationContext springApplicationContext() {
+		return new SpringApplicationContext();
 	}
 }
