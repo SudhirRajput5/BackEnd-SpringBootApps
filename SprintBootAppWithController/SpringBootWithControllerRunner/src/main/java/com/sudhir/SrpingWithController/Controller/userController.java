@@ -24,6 +24,10 @@ public class userController {
 	@RequestMapping("/getusser")
 	public String getUser(){
 		logger.error("This is a logging example");
+		logger.info("this is logging info");
+		logger.warn("this is logging warning");
+		logger.debug("this is logging debug");
+		
 		return name;
 		
 	}
