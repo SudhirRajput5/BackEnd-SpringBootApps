@@ -55,7 +55,7 @@ public class UserServiceImp implements UserService {
 	public UserRest findUserbyEmail(String email) {
 		UserRest returnValue = new UserRest();
 		
-		UserEntity findUser = userRepository.findByEmail(email);
+		UserEntity findUser = userRepository.findBylastNameUserInfo(email);
 		
 		BeanUtils.copyProperties(findUser, returnValue);
 		
