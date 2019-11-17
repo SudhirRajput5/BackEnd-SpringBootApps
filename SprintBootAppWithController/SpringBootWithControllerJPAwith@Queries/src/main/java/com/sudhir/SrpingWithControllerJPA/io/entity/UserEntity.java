@@ -18,12 +18,6 @@ import org.hibernate.annotations.DynamicUpdate;
 @DynamicUpdate
 @Entity
 @Table(name = "Users")
-
-//******Remember for NamedQueries use class name not the table name.
-
-@NamedQueries(value = { 
-		@NamedQuery(name ="UserEntity.UserinfoLastname", query  ="select u from UserEntity u where u.lastName=?1 ") 
-		})
 public class UserEntity implements Serializable{
 
 	private static final long serialVersionUID = 3867958605885326902L;
