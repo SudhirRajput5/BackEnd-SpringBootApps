@@ -1,5 +1,7 @@
 package com.sudhir.Internationalization;
 
+//this is class is for internationalization
+
 import java.util.Locale;
 
 import org.springframework.context.annotation.Bean;
